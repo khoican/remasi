@@ -8,8 +8,17 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-@import './../../public/assets/style.css';
-
 body {
     font-family: 'Poppins';
+    min-height: 100vh;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+.box-1 {
+    width: 10rem; height: 10rem;
+}
+.box-2 {
+    width: 20rem; height: 20rem;
 }
