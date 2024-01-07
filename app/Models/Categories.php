@@ -12,4 +12,8 @@ class Categories extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function recipe() {
+        return $this->hasMany(Recipe::class, 'categoryId');
+    }
 }

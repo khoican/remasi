@@ -2,12 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Recipe;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Comments extends Model
 {
     use HasFactory;
 
     protected $fillable = ['comment'];
+
+    public function recipe() {
+        return $this->belongsTo(Recipe::class, 'recipeId');
+    }
+
+    public function reply() {
+        return $this->hasMany(Comments::class, 'commentId');
+    }
 }

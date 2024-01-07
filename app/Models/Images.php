@@ -10,4 +10,8 @@ class Images extends Model
     use HasFactory;
 
     protected $fillable = ['image'];
+
+    public function recipe() {
+        return $this->belongsTo(Recipe::class, 'recipeId');
+    }
 }

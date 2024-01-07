@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('recipeId')->index();
             $table->string('image', 255);
             $table->timestamps();
+
+            $table->foreign('recipeId')->references('id')->on('recipes')->onDelete('cascade');
         });
     }
 
