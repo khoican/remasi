@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('userId')->index();
             $table->unsignedBigInteger('recipeId')->index();
             $table->string('comment', 255);
             $table->timestamps();
 
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('recipeId')->references('id')->on('recipes')->onDelete('cascade');
         });
     }
