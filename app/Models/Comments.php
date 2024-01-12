@@ -11,7 +11,7 @@ class Comments extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['comment'];
+    protected $fillable = ['recipeId','userId','comment'];
 
     public function recipe() {
         return $this->belongsTo(Recipe::class, 'recipeId');

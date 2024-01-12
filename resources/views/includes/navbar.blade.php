@@ -1,15 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand fw-bold fs-2">REMASI</a>
-
-        <div class="navbar-nav fs-5 fw-bold opacity-75">
-            <a href="/" class="nav-link active">Home</a>
-            <a href="/recipe" class="nav-link">Recipe</a>
+<nav class="navbar navbar-expand-lg py-3 shadow position-sticky top-0 w-100 z-3 bg-white">
+    <div class="container">
+        <div>
+            <img src="{{ asset('assets/images/logo.png') }}" alt="logo" style="width: 60px">
         </div>
 
-        <div>
-            <a href="#" class="btn btn-primary">Login</a>
-            <a href="#" class="btn btn-outline-primary">Register</a>
+        <div class="navbar-nav d-flex align-items-center gap-3">
+            <a href="/" class="nav-link fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('home.*') ? 'text-success' : '' }}">Beranda</a>
+            <a href="/resep" class="nav-link fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('resep.*') ? 'text-success' : '' }}">Resep</a>
+
+            @if(Auth::user()->level == 'admin')
+                <a href="/admin" class="nav-link fw-semibold d-flex align-items-center gap-2">Admin Panel</a>
+            @endif
+
+            <a href="{{ route('logout') }}" class="btn btn-outline-danger fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('akun.*') ? 'text-success' : '' }}">Logout</a>
+
         </div>
     </div>
 </nav>

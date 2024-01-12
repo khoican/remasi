@@ -1,40 +1,23 @@
-@extends('layouts.index')
+@extends('layouts.user')
 
-@section('content')
+@section('user-content')
 
-<h1 class="fs-3 fw-bold">Semua Resep</h1>
-
-<div class="mt-3 d-flex flex-wrap justify-content-between">
-    <div class="card mb-3" style="width: 20rem;">
-        <img src="https://source.unsplash.com/random" class="card-img-top" alt="" style="width: 100%; height: 20rem">
-        <div class="card-body">
-            <h4 class="card-text fs-5">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
+<div class="bg-white">
+    <main class="container py-4">
+        <div class="px-5">
+            <h1 class="fw-bold fs-4 mb-3" style="letter-spacing: 1px">Menampilkan Semua Resep</h1>
+            <div class="d-flex flex-wrap gap-3">
+                @foreach ($recipes as $recipe)
+                    <div class="card shadow-sm" style="width: 15rem;">
+                        <img src="{{ asset('storage/recipe/'.$recipe->image) }}" class="card-img-top bg-white object-fit-cover" alt="{{ $recipe->name }}" style="height: 13rem">
+                        <div class="card-body bg-white">
+                            <a href="{{ route('resep.show', $recipe->id) }}" class="nav-link card-text fw-semibold">{{ $recipe->name }}</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
-    </div>
-    <div class="card mb-3" style="width: 20rem;">
-        <img src="https://source.unsplash.com/random" class="card-img-top" alt="" style="width: 100%; height: 20rem">
-        <div class="card-body">
-            <h4 class="card-text fs-5">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
-        </div>
-    </div>
-    <div class="card mb-3" style="width: 20rem;">
-        <img src="https://source.unsplash.com/random" class="card-img-top" alt="" style="width: 100%; height: 20rem">
-        <div class="card-body">
-            <h4 class="card-text fs-5">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
-        </div>
-    </div>
-    <div class="card mb-3" style="width: 20rem;">
-        <img src="https://source.unsplash.com/random" class="card-img-top" alt="" style="width: 100%; height: 20rem">
-        <div class="card-body">
-            <h4 class="card-text fs-5">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
-        </div>
-    </div>
-    <div class="card mb-3" style="width: 20rem;">
-        <img src="https://source.unsplash.com/random" class="card-img-top" alt="" style="width: 100%; height: 20rem">
-        <div class="card-body">
-            <h4 class="card-text fs-5">Some quick example text to build on the card title and make up the bulk of the card's content.</h4>
-        </div>
-    </div>
+    </main>
 </div>
 
 @endsection

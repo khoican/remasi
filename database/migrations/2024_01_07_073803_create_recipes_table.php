@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('categoryId')->index();
             $table->string('name', 255);
+            $table->string('image', 255)->nullable();
             $table->text('description');
             $table->text('ingredients');
             $table->text('instructions');
+            $table->text('nutritions');
             $table->timestamps();
 
             $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');

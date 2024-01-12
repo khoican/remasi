@@ -11,7 +11,7 @@ class ReplyComments extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['comment'];
+    protected $fillable = ['comment', 'userId', 'commentId'];
 
     public function comment() {
         return $this->belongsTo(Comments::class, 'commentId');
