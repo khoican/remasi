@@ -4,16 +4,27 @@
             <img src="{{ asset('assets/images/logo.png') }}" alt="logo" style="width: 60px">
         </div>
 
-        <div class="navbar-nav d-flex align-items-center gap-3">
-            <a href="/" class="nav-link fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('home.*') ? 'text-success' : '' }}">Beranda</a>
-            <a href="/resep" class="nav-link fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('resep.*') ? 'text-success' : '' }}">Resep</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            @if(Auth::user()->level == 'admin')
-                <a href="/admin" class="nav-link fw-semibold d-flex align-items-center gap-2">Admin Panel</a>
-            @endif
-
-            <a href="{{ route('logout') }}" class="btn btn-outline-danger fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('akun.*') ? 'text-success' : '' }}">Logout</a>
-
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a href="/" class="nav-link fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('home.*') ? 'text-success' : '' }}">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/resep" class="nav-link fw-semibold d-flex align-items-center gap-2 {{ request()->routeIs('resep.*') ? 'text-success' : '' }}">Resep</a>
+                </li>
+                <li class="nav-item">
+                    @if(Auth::user()->level == 'admin')
+                        <a href="/admin" class="nav-link fw-semibold d-flex align-items-center gap-2">Admin Panel</a>
+                    @endif
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}" class="nav-link fw-semibold d-flex align-items-center gap-2 text-danger">Logout</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

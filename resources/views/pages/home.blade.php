@@ -3,17 +3,17 @@
 @section('user-content')
 
 <div class="bg-white">
-    <header class="container d-flex justify-content-between align-items-center" style="height: 100vh">
-        <div>
+    <header class="mx-5 d-flex flex-wrap justify-content-center align-items-center row pb-5" style="min-height: 100vh">
+        <div class="col-lg-4">
             <div>
-                <h1 class="fw-bold fst-italic text-success" style="font-size: 5rem; height: 4.5rem">REMASI</h1>
+                <h1 class="fw-bold fst-italic text-success mb-0" style="font-size: 4rem;">REMASI</h1>
                 <P class="fs-4 fw-medium opacity-75" style="letter-spacing: 2px">Resep <span class="text-danger fw-bold" style="letter-spacing: 5px">MP-ASI</span></P>
             </div>
             <p class="fw-light">Temukan berbagai resep makanan pendamping ASI <a href="" class="text-decoration-none text-success fw-semibold">dibawah ini!</a></p>
         </div>
 
-        <div>
-            <img src="{{ asset('assets/images/hero.png') }}" alt="" style="height: 25rem">
+        <div class="col-lg-8">
+            <img src="{{ asset('assets/images/hero.png') }}" alt="" class="img-fluid">
         </div>
     </header>
 
@@ -24,7 +24,7 @@
                 <p>Bunda dapat memilih berdasarkan kategori usia buah hati bunda</p>
             </div>
 
-            <div class="d-flex justify-content-center gap-5">
+            <div class="d-flex justify-content-center gap-5 flex-wrap">
                 @foreach ($categories as $category)
                     <a href="" class="text-decoration-none text-black">
                         <div class="bg-white d-flex justify-content-center align-items-center shadow-sm overflow-hidden" style="width: 10rem; height: 10rem; border-radius: 99999px;">
