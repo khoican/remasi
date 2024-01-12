@@ -3,11 +3,15 @@
 <head>
     @include('includes.head')
 </head>
-<body class="bg-white">
+<body class="bg-white relative" style="min-height: 100vh">
 
     @include('includes.navbar')
 
-    @yield('user-content')
+    <main style="min-height: 80vh">
+        @yield('user-content')
+    </main>
+
+    @include('includes.footer')
 
 </body>
 </html>

@@ -40,7 +40,7 @@
     <main class="container py-5">
         <div class="px-5">
             <h1 class="fw-bold fs-3 mb-3" style="letter-spacing: 2px">Resep</h1>
-            <div class="d-flex flex-wrap gap-3">
+            <div class="d-flex flex-wrap gap-3 mb-4">
                 @foreach ($recipes as $recipe)
                     <div class="card shadow-sm" style="width: 15rem;">
                         <img src="{{ asset('storage/recipe/'.$recipe->image) }}" class="card-img-top bg-white object-fit-cover" alt="{{ $recipe->name }}" style="height: 13rem">
@@ -50,6 +50,8 @@
                     </div>
                 @endforeach
             </div>
+
+            <a href="/resep" class="text-decoration-none text-success">Lihat Semua Resep...</a>
         </div>
     </main>
 </div>
