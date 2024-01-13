@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categories;
-use App\Models\Recipe as ModelsRecipe;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use App\Models\Categories;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use App\Models\Recipe as ModelsRecipe;
+use Illuminate\Support\Facades\Storage;
 
 class Recipe extends Controller
 {
@@ -34,6 +35,7 @@ class Recipe extends Controller
             'ingredients' => 'required',
             'instructions' => 'required',
             'nutritions' => 'required',
+            'slug' => 'required',
         ]);
 
         $image = $request->file('image');
@@ -47,6 +49,7 @@ class Recipe extends Controller
             'ingredients' => $request -> ingredients,
             'instructions' => $request -> instructions,
             'nutritions' => $request -> nutritions,
+            'slug' => Str::slug($request->name),
         ]);
 
         return redirect()->route('admin.index')->with('success', 'Resep Berhasil Ditambahkan');
@@ -69,6 +72,7 @@ class Recipe extends Controller
             'ingredients',
             'instructions',
             'nutritions',
+            'slug',
         ]);
 
         $recipes = ModelsRecipe::findOrFail($id);
@@ -87,6 +91,7 @@ class Recipe extends Controller
                 'ingredients' => $request -> ingredients,
                 'instructions' => $request -> instructions,
                 'nutritions' => $request -> nutritions,
+                'slug' => Str::slug($request->name),
             ]);
         } else {
             $recipes->update([
@@ -96,6 +101,7 @@ class Recipe extends Controller
                 'ingredients' => $request -> ingredients,
                 'instructions' => $request -> instructions,
                 'nutritions' => $request -> nutritions,
+                'slug' => Str::slug($request->name),
             ]);
         }
 

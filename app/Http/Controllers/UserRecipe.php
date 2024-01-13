@@ -16,9 +16,9 @@ class UserRecipe extends Controller
         return view('pages.recipe', compact('recipes'));
     }
 
-    public function show($id): View {
-        $recipe = Recipe::findOrFail($id);
-        $comments = Comments::where('recipeId', $id)->latest()->get();
+    public function show(string $slug_recipe): View {
+        $recipe = Recipe::where('slug', $slug_recipe)->first();
+        $comments = Comments::where('recipeId', $recipe->id)->latest()->get();
         $replies = ReplyComments::all();
 
         return view('pages.detailRecipe', compact('recipe', 'comments', 'replies'));

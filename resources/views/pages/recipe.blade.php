@@ -9,9 +9,9 @@
             <div class="d-flex flex-wrap gap-3">
                 @foreach ($recipes as $recipe)
                     <div class="card shadow-sm" style="width: 15rem;">
-                        <img src="{{ asset('storage/recipe/'.$recipe->image) }}" class="card-img-top bg-white object-fit-cover" alt="{{ $recipe->name }}" style="height: 13rem">
+                        <img src="{{ asset('storage/recipe/'.$recipe->image) }}" class="card-img-top bg-white object-fit-cover" alt="{{ $recipe->name }}" style="height: 15rem">
                         <div class="card-body bg-white">
-                            <a href="{{ route('resep.show', $recipe->id) }}" class="nav-link card-text fw-semibold">{{ $recipe->name }}</a>
+                            <a href="{{ route('resep-show', $recipe->id) }}" class="nav-link card-text fw-semibold">{{ $recipe->name }}</a>
                         </div>
                     </div>
                 @endforeach

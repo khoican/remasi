@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('ingredients');
             $table->text('instructions');
             $table->text('nutritions');
+            $table->string('slug', 255);
             $table->timestamps();
 
             $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');

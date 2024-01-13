@@ -27,6 +27,7 @@ Route::post('proses-change-password',[UserController::class, 'proses_change_pass
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('/resep', App\Http\Controllers\UserRecipe::class)->names('resep');
+    Route::get('/resep/{slug_recipe}', [App\Http\Controllers\UserRecipe::class, 'show'])->name('resep-show');
     Route::post('comment', [App\Http\Controllers\UserRecipe::class, 'comment'])->name('comment');
     Route::post('reply', [App\Http\Controllers\UserRecipe::class, 'reply'])->name('reply');
 

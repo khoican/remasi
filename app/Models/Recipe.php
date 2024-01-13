@@ -12,7 +12,11 @@ class Recipe extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'categoryId', 'description', 'ingredients', 'instructions', 'nutritions', 'image'];
+    protected $fillable = ['name', 'categoryId', 'description', 'ingredients', 'instructions', 'nutritions', 'image', 'slug'];
+
+    public function getRouteKeyName() {
+        return 'slug';
+    }
 
     public function category() {
         return $this->belongsTo(Categories::class, 'categoryId');
@@ -21,4 +25,5 @@ class Recipe extends Model
     public function comments() {
         return $this->hasMany(Comments::class, 'recipeId');
     }
+
 }

@@ -34,6 +34,7 @@ class RecipeSeeder extends Seeder
                                             <li>Lemak 0,6 gr</li>
                                             <li>Karbohidrat 38,1 gr</li>
                                         </ul>',
+                'slug'              => 'pure-pisang-kurma',
             ],
         ];
 
