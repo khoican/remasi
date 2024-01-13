@@ -41,8 +41,8 @@
                 @csrf
                 <input type="hidden" value="{{ $recipe->id }}" name="recipeId">
                 <input type="hidden" value="{{ Auth::user()->id }}" name="userId">
-                <input type="text" class="form-control fs-6" placeholder="Tulis Komentar Untuk Resep {{ $recipe->name }}" name="comment">
-                <button type="submit" class="btn btn-primary">Kirim</button>
+                <input type="text" class="form-control fs-6 bg-white border-success" placeholder="Tulis Komentar Untuk Resep {{ $recipe->name }}" name="comment">
+                <button type="submit" class="btn btn-success">Kirim</button>
             </form>
         </div>
 
@@ -69,8 +69,8 @@
                     @csrf
                     <input type="hidden" value="{{ $comment->id }}" name="commentId">
                     <input type="hidden" value="{{ Auth::user()->id }}" name="userId">
-                    <input type="text" class="form-control fs-6" placeholder="Tulis Balasan Untuk Komentar Ini" name="comment">
-                    <button type="submit" class="btn btn-primary">Kirim</button>
+                    <input type="text" class="form-control fs-6 bg-white border-success" placeholder="Tulis Balasan Untuk Komentar Ini" name="comment">
+                    <button type="submit" class="btn btn-success">Kirim</button>
                 </form>
                 @forelse ($replies as $reply)
                     @if ($reply->commentId == $comment->id)

@@ -6,7 +6,7 @@
 <a href="{{ route('admin.create') }}" class="btn btn-success shadow mb-3 d-flex align-items-center gap-3 w-12 mt-5"><i class="bi bi-plus"></i> Tambah Resep</a>
 
 <table class="table px-5 mt-3 rounded overflow-hidden shadow table-hover">
-    <thead>
+    <thead class="table-success">
         <tr class="w-full text-center">
             <th scope="col" style="width: 10%">#</th>
             <th scope="col" style="width: 50%">Nama Resep</th>

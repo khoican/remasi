@@ -9,11 +9,11 @@
         <div class="col-6">
             <div class="mb-4">
                 <label for="name" class="form-label fw-semibold">Nama Resep</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $recipes->name) }}">
+                <input type="text" class="form-control bg-white border-success" id="name" name="name" value="{{ old('name', $recipes->name) }}">
             </div>
             <div class="mb-4">
                 <label for="description" class="form-label fw-semibold">Deskripsi</label>
-                <textarea class="form-control" name="description" id="description" rows="5">{{ old('description', $recipes->description) }}</textarea>
+                <textarea class="form-control bg-white border-success" name="description" id="description" rows="5">{{ old('description', $recipes->description) }}</textarea>
             </div>
             <div class="mb-4">
                 <label for="ingredients" class="form-label fw-semibold">Bahan-Bahan</label>
@@ -31,10 +31,10 @@
         <div class="col-6">
             <div class="mb-4">
                 <label for="gambar" class="form-label fw-semibold">Gambar</label>
-                <input type="file" class="form-control" id="gambar" name="image">
+                <input type="file" class="form-control bg-white border-success" id="gambar" name="image">
             </div>
             <div class="mb-4">
-                <select name="categoryId" id="" class="form-control">
+                <select name="categoryId" id="" class="form-control bg-white border-success">
                     @forelse ($categories as $category)
                         @if ($recipes->categoryId == $category->id)
                             <option type="text" class="form-control" value="{{ $category->id }}" name="categoryId">{{ $category->name }}</option>
@@ -49,9 +49,12 @@
             </div>
         </div>
 
-        <div class="d-flex gap-4 justify-content-end px-5 mb-5">
-            <a href="/admin" class="btn btn-secondary align-middle">Batal</a>
-            <button type="submit" class="btn btn-success d-flex align-items-center justify-content-center gap-3 fw-semibold" style="width: 8rem"><i class="bi bi-plus"></i> Simpan</button>
+        <div class="text-end px-5 mb-5">
+            <p>Pastikan data yang anda masukkan sudah benar sebelum menyimpan data!</p>
+            <div class="d-flex gap-4 justify-content-end">
+                <a href="/admin" class="btn btn-outline-danger d-flex align-items-center">Batal</a>
+                <button type="submit" class="btn btn-success d-flex align-items-center justify-content-center gap-3 fw-semibold" style="width: 8rem"><i class="bi bi-plus"></i> Simpan</button>
+            </div>
         </div>
 
     </form>

@@ -38,8 +38,8 @@
         </div>
     </div>
 
-    <table class="table px-5 mt-3 table-hover rounded overflow-hidden shadow">
-        <thead>
+    <table class="table table-hover px-5 mt-3 rounded overflow-hidden shadow">
+        <thead class="table-success">
             <tr class="w-full text-center">
                 <th scope="col" style="width: 10%">#</th>
                 <th scope="col" style="width: 30%">Gambar</th>
