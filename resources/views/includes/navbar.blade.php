@@ -16,12 +16,11 @@
                 <li class="nav-item">
                     <a href="/resep" class="nav-link fw-semibold {{ request()->routeIs('resep.*') ? 'text-success' : '' }}">Resep</a>
                 </li>
+                @if(Auth::user() && Auth::user()->level == 'admin')
                 <li class="nav-item">
-                    @if(Auth::user() && Auth::user()->level == 'admin')
                         <a href="/admin" class="nav-link fw-semibold">Admin Panel</a>
-                    @endif
                 </li>
-                @if(Auth::user())
+                @elseif (Auth::user() && Auth::user()->level == 'user')
                 <li class="nav-item ms-2">
                     <div class="dropdown">
                         <button class="btn btn-success fw-semibold dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -35,9 +34,9 @@
                     </div>
                 </li>
                 @else
-                <li class="nav-item">
+                <li class="nav-item ms-2">
                     <a href="{{ route('register') }}" class="btn btn-outline-success fw-semibold">Daftar</a>
-                    <a href="{{ route('login') }}" class="btn btn-success fw-semibold">Login</a>
+                    <a href="{{ route('login') }}" class="btn btn-success fw-semibold ms-2">Login</a>
                 </li>
                 @endif
             </ul>
