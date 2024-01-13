@@ -29,7 +29,7 @@
                             {{ Auth::user()->name }}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Ganti Password</a></li>
+                            <li><a class="dropdown-item" href="{{ route('change_password') }}">Ganti Password</a></li>
                             <a href="{{ route('logout') }}" class="dropdown-item text-danger">Logout</a>
                         </ul>
                     </div>

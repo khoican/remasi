@@ -22,6 +22,9 @@ Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 Route::resource('/', App\Http\Controllers\Home::class)->names('home');
 
+Route::get('change-password',[UserController::class, 'change_password'])->name('change_password');
+Route::post('proses-change-password',[UserController::class, 'proses_change_password'])->name('proses-change-password');
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('/resep', App\Http\Controllers\UserRecipe::class)->names('resep');
     Route::post('comment', [App\Http\Controllers\UserRecipe::class, 'comment'])->name('comment');

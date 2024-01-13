@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -66,6 +67,29 @@ class UserController extends Controller
         User::create($request->all());
 
         return redirect()->route('login');
+    }
+
+    public function change_password() {
+        return view('auth.changePassword');
+    }
+
+    public function proses_change_password(Request $request) {
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|min:8',
+        ]);
+
+        $old_password = Hash::check($request->old_password, Auth::user()->password);
+
+        if($old_password) {
+            User::findOrFail(Auth::user()->id)->update([
+                'password' => Hash::make($request->new_password)
+            ]);
+
+            return redirect()->back()->with('message', 'Password Berhasil Diubah');
+        }
+
+        return redirect()->back()->with('error', 'Gagal Ganti Password');
     }
 
     public function logout(Request $request) {

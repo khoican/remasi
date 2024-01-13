@@ -12,11 +12,11 @@
             @csrf
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="name" required>
+                <input type="text" class="form-control bg-white border-success" id="username" name="name" required>
             </div>
             <div class="mb-5">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control bg-white border-success" id="password" name="password" required>
             </div>
 
             <button type="submit" class="btn btn-success float-end d-flex align-items-center gap-3">
