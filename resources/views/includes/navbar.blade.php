@@ -14,7 +14,7 @@
                     <a href="/" class="nav-link fw-semibold {{ request()->routeIs('home.*') ? 'text-success' : '' }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/resep" class="nav-link fw-semibold me-2 {{ request()->routeIs('resep.*') ? 'text-success' : '' }}">Resep</a>
+                    <a href="/resep" class="nav-link fw-semibold {{ request()->routeIs('resep.*') ? 'text-success' : '' }}">Resep</a>
                 </li>
                 <li class="nav-item">
                     @if(Auth::user() && Auth::user()->level == 'admin')
@@ -22,7 +22,7 @@
                     @endif
                 </li>
                 @if(Auth::user())
-                <li class="nav-item">
+                <li class="nav-item ms-2">
                     <div class="dropdown">
                         <button class="btn btn-success fw-semibold dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle fs-6"></i>
