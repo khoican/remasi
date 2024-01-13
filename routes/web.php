@@ -20,8 +20,9 @@ Route::post('proses_login', [UserController::class, 'proses_login'])->name('pros
 Route::post('proses_register', [UserController::class, 'proses_register'])->name('proses_register');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
+Route::resource('/', App\Http\Controllers\Home::class)->names('home');
+
 Route::group(['middleware' => ['auth']], function() {
-    Route::resource('/', App\Http\Controllers\Home::class)->names('home');
     Route::resource('/resep', App\Http\Controllers\UserRecipe::class)->names('resep');
     Route::post('comment', [App\Http\Controllers\UserRecipe::class, 'comment'])->name('comment');
     Route::post('reply', [App\Http\Controllers\UserRecipe::class, 'reply'])->name('reply');

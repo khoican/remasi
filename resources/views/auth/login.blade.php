@@ -2,28 +2,32 @@
 
 @section('auth-content')
 
+
 <main class="d-flex justify-content-center align-items-center vh-100">
-    <div class="w-md-75 px-5 py-5 rounded-4 shadow">
+    <div class="col-md-4 px-5 py-5 rounded-4 shadow">
         <div class="mb-4">
-            <h1 class="fs-3 fw-semibold text-success">Login</h1>
-            <p class="fw-light">Silahkan masukkan username dan password anda</p>
+            <h1 class="fs-3 fw-semibold">Login</h1>
+            <p class="fw-light">Belum punya akun? daftarkan diri anda <a href="{{ route('register') }}" class="text-success text-decoration-none fw-medium">Daftar Disini</a> </p>
         </div>
-        <form class="px-3" action="{{ route('proses_login') }}" method="POST">
+        <form action="{{ route('proses_login') }}" method="POST">
             @csrf
+            @error('login-gagal')
+                <div class="alert alert-danger" role="alert">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="name">
+                <input type="text" class="form-control" id="username" name="name" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-5">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
 
-            <p class="text-end">Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none text-success">Daftar Disini</a></p>
-            <button type="submit" class="btn btn-success float-end d-flex align-items-center gap-3">
-                Login
-                <i class="bi bi-box-arrow-in-right"></i>
-            </button>
+            <button type="submit" class="btn btn-success w-100 text-center mb-2">Login</button>
+
+            <a href="" class="text-decoration-none text-info">Lupa Password?</a>
         </form>
     </div>
 </main>
