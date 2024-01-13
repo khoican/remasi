@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categories;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use App\Models\Categories;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class Category extends Controller
 {
@@ -28,6 +29,7 @@ class Category extends Controller
         Categories::create([
             'name' => $request->name,
             'image' => $image->hashName(),
+            'slug' => Str::slug($request->name)
         ]);
 
         return redirect()->route('kategori.store')->with('success', 'Kategori Berhasil Ditambahkan');

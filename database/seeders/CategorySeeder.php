@@ -17,14 +17,17 @@ class CategorySeeder extends Seeder
             [
                 'name' => '6-12 Bulan',
                 'image' => 'tv0FnJyJvPFho3c3Z1ZkshEU9pkKTq9Gq7QhScHV.png',
+                'slug' => '6-12-bulan'
             ],
             [
                 'name' => '12-18 Bulan',
                 'image' => 'l8ggVJmRWxXCg3pEJ3jFOYKjBFrOFLGk0RReuxkB.png',
+                'slug' => '12-18-bulan'
             ],
             [
                 'name' => '18-24 Bulan',
                 'image' => 'lfUtF4QaIwvp2pIfDaBjjcGabDepQ5ti4Kamps2Y.png',
+                'slug' => '18-24-bulan'
             ]
         ];
 

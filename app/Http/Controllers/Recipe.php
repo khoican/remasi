@@ -35,7 +35,6 @@ class Recipe extends Controller
             'ingredients' => 'required',
             'instructions' => 'required',
             'nutritions' => 'required',
-            'slug' => 'required',
         ]);
 
         $image = $request->file('image');
@@ -72,7 +71,6 @@ class Recipe extends Controller
             'ingredients',
             'instructions',
             'nutritions',
-            'slug',
         ]);
 
         $recipes = ModelsRecipe::findOrFail($id);

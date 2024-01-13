@@ -26,7 +26,7 @@
 
             <div class="d-flex justify-content-center gap-5 flex-wrap">
                 @foreach ($categories as $category)
-                    <a href="" class="text-decoration-none text-black">
+                    <a href="{{ route('resep-category', $category->slug) }}" class="text-decoration-none text-black">
                         <div class="bg-white d-flex justify-content-center align-items-center shadow-sm overflow-hidden" style="width: 10rem; height: 10rem; border-radius: 99999px;">
                             <img src="{{ asset('storage/category/'.$category->image) }}" alt="" style="scale: 0.6; height: 10rem; object-fit: cover;">
                         </div>
