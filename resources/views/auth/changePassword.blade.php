@@ -1,5 +1,6 @@
 @extends('layouts.user')
 
+@section('title', 'Ganti Password')
 @section('user-content')
 
 @if(session('message'))

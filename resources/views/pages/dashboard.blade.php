@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('header', 'Semua Resep')
+@section('title', 'Dashboard')
 @section('content')
 
 <a href="{{ route('admin.create') }}" class="btn btn-success shadow mb-3 d-flex align-items-center gap-3 w-12 mt-5"><i class="bi bi-plus"></i> Tambah Resep</a>

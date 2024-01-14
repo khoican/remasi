@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
+@section('title', 'Login')
 @section('auth-content')
-
 
 <main class="d-flex justify-content-center align-items-center vh-100">
     <div class="col-md-4 px-5 py-5 rounded-4 shadow">

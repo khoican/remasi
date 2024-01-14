@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('header', 'Tambah Resep')
+@section('title', 'Tambah Resep')
 @section('content')
 
     <form class="mt-5 row" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">

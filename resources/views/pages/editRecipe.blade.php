@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('header', 'Edit Resep')
+@section('title', 'Edit Resep')
 @section('content')
 
     <form class="mt-5 row" action="{{ route('admin.update', $recipes->id) }}" method="POST" enctype="multipart/form-data">

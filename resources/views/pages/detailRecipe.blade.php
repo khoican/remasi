@@ -1,5 +1,6 @@
 @extends('layouts.user')
 
+@section('title', $recipe->name)
 @section('user-content')
 
 <div class="bg-white">

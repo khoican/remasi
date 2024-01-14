@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('header', 'Kategori')
+@section('title', 'Kategori')
 @section('content')
 
 <main class="py-5">

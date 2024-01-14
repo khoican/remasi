@@ -1,5 +1,6 @@
 @extends('layouts.user')
 
+@section('title', 'Resep')
 @section('user-content')
 
 <div class="bg-white">
