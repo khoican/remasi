@@ -14,7 +14,7 @@
             </div>
             <div class="mb-4">
                 <label for="description" class="form-label fw-semibold">Deskripsi</label>
-                <textarea class="form-control bg-white border-success" name="description" id="description" rows="5">{{ old('description', $recipes->description) }}</textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="5">{{ old('description', $recipes->description) }}</textarea>
             </div>
             <div class="mb-4">
                 <label for="ingredients" class="form-label fw-semibold">Bahan-Bahan</label>
@@ -31,10 +31,7 @@
         </div>
         <div class="col-6">
             <div class="mb-4">
-                <label for="gambar" class="form-label fw-semibold">Gambar</label>
-                <input type="file" class="form-control bg-white border-success" id="gambar" name="image">
-            </div>
-            <div class="mb-4">
+                <label for="categoryId" class="form-label fw-semibold">Kategori</label>
                 <select name="categoryId" id="" class="form-control bg-white border-success">
                     @forelse ($categories as $category)
                         @if ($recipes->categoryId == $category->id)
@@ -48,13 +45,16 @@
 
                 </select>
             </div>
-        </div>
-
-        <div class="text-end px-5 mb-5">
-            <p>Pastikan data yang anda masukkan sudah benar sebelum menyimpan data!</p>
-            <div class="d-flex gap-4 justify-content-end">
-                <a href="/admin" class="btn btn-outline-danger d-flex align-items-center">Batal</a>
-                <button type="submit" class="btn btn-success d-flex align-items-center justify-content-center gap-3 fw-semibold" style="width: 8rem"><i class="bi bi-plus"></i> Simpan</button>
+            <div class="mb-4">
+                <label for="gambar" class="form-label fw-semibold">Gambar</label>
+                <input type="file" class="form-control bg-white border-success" id="gambar" name="image">
+            </div>
+            <div class="mb-5">
+                <p>Pastikan semua data yang anda masukkan sudah benar sebelum menyimpan data. apabila terdapat kesalahan setelah menyimpan data, silahkan ubah data melalui fitur ubah</p>
+                <div class="d-flex gap-4 justify-content-end">
+                    <a href="/admin" class="btn btn-outline-danger d-flex align-items-center">Batal</a>
+                    <button type="submit" class="btn btn-success d-flex align-items-center justify-content-center gap-3 fw-semibold" style="width: 8rem"><i class="bi bi-plus"></i> Simpan</button>
+                </div>
             </div>
         </div>
 
@@ -62,6 +62,7 @@
 
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script>
+        CKEDITOR.replace( 'description' );
         CKEDITOR.replace( 'ingredients' );
         CKEDITOR.replace( 'instructions' );
         CKEDITOR.replace( 'nutritions' );

@@ -36,7 +36,7 @@
                 <p class="fw-light"><span class="text-danger fw-bold">*</span><small>Ketik ulang password anda</small></p>
             </div>
 
-            <button type="submit" class="btn btn-success float-end d-flex align-items-center gap-3">
+            <button type="submit" class="btn btn-success w-100 d-flex align-items-center justify-content-center gap-3">
                 Daftar
                 <i class="bi bi-person-fill-add"></i>
             </button>

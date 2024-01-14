@@ -15,19 +15,19 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => '6-12 Bulan',
+                'name' => '6-8 Bulan',
                 'image' => 'tv0FnJyJvPFho3c3Z1ZkshEU9pkKTq9Gq7QhScHV.png',
-                'slug' => '6-12-bulan'
+                'slug' => '6-8-bulan'
             ],
             [
-                'name' => '12-18 Bulan',
+                'name' => '9-11 Bulan',
                 'image' => 'l8ggVJmRWxXCg3pEJ3jFOYKjBFrOFLGk0RReuxkB.png',
-                'slug' => '12-18-bulan'
+                'slug' => '9-11-bulan'
             ],
             [
-                'name' => '18-24 Bulan',
+                'name' => '>12 Bulan',
                 'image' => 'lfUtF4QaIwvp2pIfDaBjjcGabDepQ5ti4Kamps2Y.png',
-                'slug' => '18-24-bulan'
+                'slug' => '12-bulan'
             ]
         ];
 

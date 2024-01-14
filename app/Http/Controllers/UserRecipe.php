@@ -18,6 +18,11 @@ class UserRecipe extends Controller
 
     public function getCategory(string $slug_category): View {
         $category = Categories::where('slug', $slug_category)->first();
+
+        if ($category == null) {
+            abort(404);
+        }
+
         $recipes = Recipe::where('categoryId', $category->id)->get();
 
         return view('pages.recipe', compact('recipes', 'category'));
@@ -25,6 +30,11 @@ class UserRecipe extends Controller
 
     public function show(string $slug_recipe): View {
         $recipe = Recipe::where('slug', $slug_recipe)->first();
+
+        if ($recipe == null) {
+            abort(404);
+        }
+
         $comments = Comments::where('recipeId', $recipe->id)->get();
         $replies = ReplyComments::all();
 

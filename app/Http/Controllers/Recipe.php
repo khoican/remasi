@@ -37,13 +37,25 @@ class Recipe extends Controller
             'nutritions' => 'required',
         ]);
 
-        $image = $request->file('image');
-        $image->storeAs('public/recipe', $image->hashName());
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image->storeAs('public/recipe', $image->hashName());
+
+            ModelsRecipe::create([
+                'categoryId' => $request -> categoryId,
+                'name' => $request -> name,
+                'image' => $image->hashName(),
+                'description' => $request -> description,
+                'ingredients' => $request -> ingredients,
+                'instructions' => $request -> instructions,
+                'nutritions' => $request -> nutritions,
+                'slug' => Str::slug($request->name),
+            ]);
+        }
 
         ModelsRecipe::create([
             'categoryId' => $request -> categoryId,
             'name' => $request -> name,
-            'image' => $image->hashName(),
             'description' => $request -> description,
             'ingredients' => $request -> ingredients,
             'instructions' => $request -> instructions,

@@ -7,14 +7,19 @@
 
     <main class="container py-3 d-flex flex-md-row flex-column gap-5">
         <div class="col-md-5">
+
+            @if($recipe->image == null)
+            <img src="{{ asset('assets/images/eating-baby.jpg') }}" alt="" class="w-100 rounded-4 position-sticky" style="top: 10rem;">
+            @else
             <img src="{{ asset('storage/recipe/'.$recipe->image) }}" alt="{{ $recipe->name }}" class="w-100 rounded-4 position-sticky" style="top: 10rem;">
+            @endif
         </div>
         <div class="col-md-7">
             <h1>{{ $recipe->name }}</h1>
 
             <div class="mt-5">
                 <h3 class="fs-5 fw-semibold">Deskripsi</h3>
-                {{ $recipe->description }}
+                {!! $recipe->description !!}
             </div>
 
             <div class="mt-5">
