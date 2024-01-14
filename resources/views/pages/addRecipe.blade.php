@@ -7,33 +7,33 @@
         @csrf
         <div class="col-6">
             <div class="mb-4">
-                <label for="name" class="form-label fw-semibold">Nama Resep</label>
-                <input type="text" class="form-control bg-white border-success" id="name" name="name">
+                <label for="name" class="form-label fw-semibold">Nama Resep <span class="text-danger">*</span></label>
+                <input type="text" class="form-control bg-white border-success" id="name" name="name" required>
             </div>
             <div class="mb-4">
-                <label for="description" class="form-label fw-semibold">Deskripsi</label>
-                <textarea class="form-control bg-white border-success" name="description" id="description"  rows="5"></textarea>
+                <label for="description" class="form-label fw-semibold">Deskripsi <span class="text-danger">*</span></label>
+                <textarea class="form-control bg-white border-success" name="description" id="description" rows="5" required></textarea>
             </div>
             <div class="mb-4">
-                <label for="ingredients" class="form-label fw-semibold">Bahan-Bahan</label>
-                <textarea class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients"></textarea>
+                <label for="ingredients" class="form-label fw-semibold">Bahan-Bahan <span class="text-danger">*</span></label>
+                <textarea class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" required></textarea>
             </div>
             <div class="mb-4">
-                <label for="instructions" class="form-label fw-semibold">Intruksi</label>
-                <textarea class="form-control @error('instructions') is-invalid @enderror" name="instructions" id="instructions"></textarea>
+                <label for="instructions" class="form-label fw-semibold">Intruksi <span class="text-danger">*</span></label>
+                <textarea class="form-control @error('instructions') is-invalid @enderror" name="instructions" id="instructions" required></textarea>
             </div>
             <div class="mb-4">
-                <label for="nutritions" class="form-label fw-semibold">Nilai Gizi</label>
-                <textarea class="form-control @error('nutritions') is-invalid @enderror" name="nutritions" id="nutritions"></textarea>
+                <label for="nutritions" class="form-label fw-semibold">Nilai Gizi <span class="text-danger">*</span></label>
+                <textarea class="form-control @error('nutritions') is-invalid @enderror" name="nutritions" id="nutritions" required></textarea>
             </div>
         </div>
         <div class="col-6">
             <div class="mb-4">
-                <label for="gambar" class="form-label fw-semibold">Gambar</label>
-                <input type="file" class="form-control bg-white border-success" id="gambar" name="image">
+                <label for="gambar" class="form-label fw-semibold">Gambar <span class="text-danger">*</span></label>
+                <input type="file" class="form-control bg-white border-success" id="gambar" name="image" required>
             </div>
             <div class="mb-4">
-                <select name="categoryId" id="" class="form-control bg-white border-success">
+                <select name="categoryId" id="" class="form-control bg-white border-success" required>
                     <option >Pilih Kategori</option>
                     @forelse ($categories as $category)
                         <option type="text" class="form-control" value="{{ $category->id }}" name="categoryId">{{ $category->name }}</option>

@@ -4,11 +4,11 @@
 
 <div class="bg-white">
 
-    <main class="container py-5 d-flex gap-5">
-        <div style="width: 40%">
+    <main class="container py-3 d-flex flex-md-row flex-column gap-5">
+        <div class="col-md-5">
             <img src="{{ asset('storage/recipe/'.$recipe->image) }}" alt="{{ $recipe->name }}" class="w-100 rounded-4 position-sticky" style="top: 10rem;">
         </div>
-        <div style="width: 60%">
+        <div class="col-md-7">
             <h1>{{ $recipe->name }}</h1>
 
             <div class="mt-5">
