@@ -23,11 +23,17 @@
             @csrf
             <div class="mb-3">
                 <label for="password" class="form-label">Password Lama</label>
-                <input type="password" class="form-control bg-white border-success" id="password" name="old_password" required>
+                <div class="d-flex position-relative align-items-center">
+                    <input type="password" class="form-control bg-white border-success" id="old_password" name="old_password" required>
+                    <button type="button" class="btn position-absolute end-0 btn-old-password" style="outline: none; border: none"><i class="bi bi-eye-slash"></i></button>
+                </div>
             </div>
             <div class="mb-5">
-                <label for="password" class="form-label">Password Baru</label>
-                <input type="password" class="form-control bg-white border-success" id="password" name="new_password" required>
+                <label for="new_password" class="form-label">Password Baru</label>
+                <div class="d-flex position-relative align-items-center">
+                    <input type="password" class="form-control bg-white border-success" id="new_password" name="new_password" required>
+                    <button type="button" class="btn position-absolute end-0 btn-new-password" style="outline: none; border: none"><i class="bi bi-eye-slash"></i></button>
+                </div>
                 <p class="fw-light"><span class="text-danger fw-bold">*</span><small>Password minimal 8 karakter</small></p>
             </div>
 
@@ -36,5 +42,26 @@
         </form>
     </div>
 </div>
+
+<script type="text/javascript">
+    const btnOldPassword = document.querySelector('.btn-old-password');
+    const btnNewPassword = document.querySelector('.btn-new-password');
+    const inputOldPassword = document.querySelector('#old_password');
+    const inputNewPassword = document.querySelector('#new_password');
+
+    btnOldPassword.addEventListener('click', () => {
+        const icon = btnOldPassword.querySelector('.bi');
+
+        inputOldPassword.type = (inputOldPassword.type === 'password') ? 'text' : 'password';
+        icon.classList.toggle('bi-eye');
+    })
+
+    btnNewPassword.addEventListener('click', () => {
+        const icon = btnNewPassword.querySelector('.bi');
+
+        inputNewPassword.type = (inputNewPassword.type === 'password') ? 'text' : 'password';
+        icon.classList.toggle('bi-eye');
+    })
+</script>
 
 @endsection
