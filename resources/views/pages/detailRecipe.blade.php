@@ -17,7 +17,7 @@
             </div>
 
             <div class="mt-5">
-                <h3 class="fs-5 fw-semibold">Bahan-Baha</h3>
+                <h3 class="fs-5 fw-semibold">Bahan-Bahan</h3>
                 {!! $recipe->ingredients !!}
             </div>
 
